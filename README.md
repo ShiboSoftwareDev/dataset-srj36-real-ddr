@@ -107,6 +107,37 @@ in the workflow artifact.
 
 The exact local checkpoints and commands are documented in [repro/README.md](repro/README.md).
 
+## H3 force-improvement follow-up
+
+[Autorouter #3341](https://github.com/tscircuit/tscircuit-autorouter/pull/3341) pins
+[repair01 #41](https://github.com/tscircuit/high-density-repair01/pull/41), which
+indexes current segment geometry and refreshes incident segments after point
+moves. A second paired run compares the memory-fixed parent `dce08687` with
+`dd5c5da5`, using the same runtime, dataset pin and 360-second / 12-GiB limits.
+This follow-up reruns **H3 alone**; the five-board table above describes #3332.
+
+| H3 measurement | Parent #3332 | Indexed #3341 |
+| --- | ---: | ---: |
+| High-density completion | 136.9 s | 139.0 s |
+| Force-improvement stage | Unfinished after 223.0 s | Completed in 168.4 s |
+| Full-board timeout phase | Force improvement | High-density repair |
+| Observed peak RSS | 1,722.9 MiB | 1,774.8 MiB (+3.0%) |
+
+The force bottleneck is reduced, but H3 still reaches the six-minute limit and
+does not reach DRC. The isolated 23-route H3 region produces byte-identical output
+to the original dependency after all 20 force steps. The separate 85-board
+ordinary-routing control remains 85/85 completed and relaxed-DRC passing, with
+zero issues/timeouts; median time is 6.6% lower and median peak RSS is 0.6% higher
+in that ordered run. All nine caller Bun CI shards pass.
+
+[Recorded H3/control evidence](benchmarks/2026-10-28-h3-force-clearance.json),
+[H3 job-log excerpts](benchmarks/2026-10-28-h3-force-clearance-log.txt),
+[ordinary-control excerpts](benchmarks/2026-10-28-h3-force-ordinary-control-log.txt),
+[H3 benchmark](https://github.com/tscircuit/tscircuit-autorouter/pull/3341#issuecomment-6481646739)
+and [85-board benchmark](https://github.com/tscircuit/tscircuit-autorouter/pull/3341#issuecomment-6481676161)
+preserve the results. These are separate single ordered comparisons; incomplete
+H3 runs do not establish completed-board latency or memory savings.
+
 ## Extraction and integrity
 
 Each sample is byte-identical to its captured DDR-assessment input. The manifest

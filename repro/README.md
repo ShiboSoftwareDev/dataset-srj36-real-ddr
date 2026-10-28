@@ -45,3 +45,13 @@ phases, not two successfully completed boards.
 The [measurement JSON](../benchmarks/2026-10-28-srj36.json) includes immutable
 input hashes, runtime, limits, per-board outcomes and stage checkpoints;
 [log excerpts](../benchmarks/2026-10-28-srj36-log.txt) preserve the printed evidence.
+
+The [H3 force-improvement follow-up](../README.md#h3-force-improvement-follow-up)
+captures region `cmn_9` with 23 routes and 2,459 points. Its regression fixtures
+are in autorouter #3341 and repair01 #41; the indexed solver preserves the
+original 110,746-byte route output after all 20 force steps. The full-board paired
+run completes force improvement in 168.4 seconds with the new pin, while the
+parent is unfinished after 223.0 seconds in that stage. Both boards still time
+out at 360 seconds, with the candidate now in high-density repair. DRC is not
+reached. [The evidence JSON](../benchmarks/2026-10-28-h3-force-clearance.json)
+records immutable revisions, phase timings, peaks and the 85-board control.

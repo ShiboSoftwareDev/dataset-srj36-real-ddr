@@ -1,0 +1,12 @@
+2026-10-28T21:56:23.9174814Z + high-density-repair01@github:tscircuit/high-density-repair01#27b3392
+2026-10-28T21:56:28.0769535Z + high-density-repair01@github:tscircuit/high-density-repair01#58d1b02
+2026-10-28T21:56:28.1295038Z Benchmark base: ["--pipeline","9","--dataset","36","--sample","1","--concurrency","1","--effort","1","--sample-timeout","360s","--max-rss-mib","12288"]
+2026-10-28T21:56:28.5522117Z [benchmark] runtime {"bunVersion":"1.4.2","platform":"linux","architecture":"arm64","cpuModel":"unknown","logicalCpuCount":8,"availableParallelism":8,"memoryLimitBytes":25152876544,"memoryBudgetPerWorkerBytes":6442450944,"requestedConcurrency":1,"workerCount":1,"threadsPerSample":1,"effectiveThreadsPerSample":1,"cpuBudgetPerSample":1}
+2026-10-28T21:58:45.8682776Z [benchmark] sample001 high-density complete: 136.9s, peakRss=1722.9 MiB
+2026-10-28T22:02:28.5645093Z [AutoroutingPipelineSolver9_PreloadedTraceGraph] 0.0% success (0/1) timed out sample001 360.0s peakRss=1722.9 MiB (Timed out after 360.0s
+2026-10-28T22:02:28.5646672Z Last progress: phase=highDensityForceImproveSolver, solver=Pipeline9HighDensityForceImproveSolver, pipelineIterations=4888914, phaseIterations=451, pipelineProgress=56%, phaseProgress=0%)
+2026-10-28T22:02:28.6819052Z Benchmark pr: ["--pipeline","9","--dataset","36","--sample","1","--concurrency","1","--effort","1","--sample-timeout","360s","--max-rss-mib","12288"]
+2026-10-28T22:02:29.1098195Z [benchmark] runtime {"bunVersion":"1.4.2","platform":"linux","architecture":"arm64","cpuModel":"unknown","logicalCpuCount":8,"availableParallelism":8,"memoryLimitBytes":25152876544,"memoryBudgetPerWorkerBytes":6442450944,"requestedConcurrency":1,"workerCount":1,"threadsPerSample":1,"effectiveThreadsPerSample":1,"cpuBudgetPerSample":1}
+2026-10-28T22:04:48.4605712Z [benchmark] sample001 high-density complete: 139.0s, peakRss=1755.8 MiB
+2026-10-28T22:08:29.1229996Z [AutoroutingPipelineSolver9_PreloadedTraceGraph] 0.0% success (0/1) timed out sample001 360.0s peakRss=1774.8 MiB (Timed out after 360.0s
+2026-10-28T22:08:29.1231678Z Last progress: phase=highDensityRepairSolver, solver=Pipeline4HighDensityRepairSolver, pipelineIterations=4890331, phaseIterations=1060, pipelineProgress=60%, phaseProgress=0%)

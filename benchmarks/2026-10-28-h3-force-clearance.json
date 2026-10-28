@@ -1,0 +1,202 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-28",
+  "scope": "Single-board H3 follow-up to the five-board DDR memory comparison; separate 85-board ordinary-routing control.",
+  "datasetCommit": "f5e1d6886ee74f136a627e0e4f92aafbf3375154",
+  "sample": {
+    "id": "sample001",
+    "board": "Allwinner H3 DDR3 16x1",
+    "inputSha256": "b4c5d5151c0bc0fb3032f230af12c6428e7148318b39f22d3d14c8803f4c7c1e"
+  },
+  "baseline": "dce0868770955001c30815c8ab1d49284f5f37fa",
+  "candidate": "dd5c5da58163d06ff9b4cb847451ca4642033ec3",
+  "dependencies": {
+    "baseline": "27b3392c38ed4474b0557c73640b261155e28c27",
+    "candidate": "58d1b020d3a05d16262c0b9e08950783012a0964",
+    "candidatePr": "https://github.com/tscircuit/high-density-repair01/pull/41"
+  },
+  "callerPr": "https://github.com/tscircuit/tscircuit-autorouter/pull/3341",
+  "settings": {
+    "pipeline": 9,
+    "effort": 1,
+    "concurrency": 1,
+    "routingThreads": 1,
+    "sampleTimeoutSeconds": 360,
+    "sampleMaxRssMiB": 12288,
+    "order": [
+      "baseline",
+      "candidate"
+    ]
+  },
+  "h3": {
+    "source": {
+      "runId": 40775856970,
+      "jobId": 123124848101,
+      "resultComment": "https://github.com/tscircuit/tscircuit-autorouter/pull/3341#issuecomment-6481646739",
+      "artifactId": 12854484082,
+      "artifactDigestFromGitHub": "sha256:7dc65120b540c9a16000e96c1495455bb6e2ab888c0c68f5c95b6f286972dd49",
+      "runner": "blacksmith-8vcpu-ubuntu-2404-arm-kunfwabl4ingwxc7",
+      "excerpt": "2026-10-28-h3-force-clearance-log.txt"
+    },
+    "baseline": {
+      "runtime": {
+        "bunVersion": "1.4.2",
+        "platform": "linux",
+        "architecture": "arm64",
+        "cpuModel": "unknown",
+        "logicalCpuCount": 8,
+        "availableParallelism": 8,
+        "memoryLimitBytes": 25152876544,
+        "memoryBudgetPerWorkerBytes": 6442450944,
+        "requestedConcurrency": 1,
+        "workerCount": 1,
+        "threadsPerSample": 1,
+        "effectiveThreadsPerSample": 1,
+        "cpuBudgetPerSample": 1
+      },
+      "highDensity": {
+        "elapsedSeconds": 136.9,
+        "peakRssMiB": 1722.9
+      },
+      "didSolve": false,
+      "didTimeout": true,
+      "elapsedSeconds": 360,
+      "peakRssMiB": 1722.9,
+      "relaxedDrcPassed": null,
+      "lastProgress": {
+        "phase": "highDensityForceImproveSolver",
+        "solver": "Pipeline9HighDensityForceImproveSolver",
+        "pipelineIterations": 4888914,
+        "phaseIterations": 451,
+        "pipelineProgressPercent": 56,
+        "phaseProgressPercent": 0
+      },
+      "forceStage": {
+        "completed": false,
+        "observedSeconds": 223.035
+      }
+    },
+    "candidate": {
+      "runtime": {
+        "bunVersion": "1.4.2",
+        "platform": "linux",
+        "architecture": "arm64",
+        "cpuModel": "unknown",
+        "logicalCpuCount": 8,
+        "availableParallelism": 8,
+        "memoryLimitBytes": 25152876544,
+        "memoryBudgetPerWorkerBytes": 6442450944,
+        "requestedConcurrency": 1,
+        "workerCount": 1,
+        "threadsPerSample": 1,
+        "effectiveThreadsPerSample": 1,
+        "cpuBudgetPerSample": 1
+      },
+      "highDensity": {
+        "elapsedSeconds": 139,
+        "peakRssMiB": 1755.8
+      },
+      "didSolve": false,
+      "didTimeout": true,
+      "elapsedSeconds": 360,
+      "peakRssMiB": 1774.8,
+      "relaxedDrcPassed": null,
+      "lastProgress": {
+        "phase": "highDensityRepairSolver",
+        "solver": "Pipeline4HighDensityRepairSolver",
+        "pipelineIterations": 4890331,
+        "phaseIterations": 1060,
+        "pipelineProgressPercent": 60,
+        "phaseProgressPercent": 0
+      },
+      "forceStage": {
+        "completed": true,
+        "elapsedSeconds": 168.376
+      },
+      "repairStage": {
+        "completed": false,
+        "observedSeconds": 52.548
+      }
+    },
+    "observedPeakChangePercent": 3,
+    "interpretation": "Force improvement completes only on the candidate within this budget. Both full boards time out; the candidate stops in high-density repair. DRC is not reached. No completed-board speedup or memory saving is established."
+  },
+  "ordinaryControl": {
+    "dataset": "dataset01",
+    "sampleCount": 85,
+    "source": {
+      "runId": 40776043768,
+      "jobId": 123125492406,
+      "resultComment": "https://github.com/tscircuit/tscircuit-autorouter/pull/3341#issuecomment-6481676161",
+      "artifactId": 12854863001,
+      "artifactDigestFromGitHub": "sha256:c96f9b785e67dcacb1c332c5dc80b4f17385379d26c29a24fa71c05ad7739b2e",
+      "runner": "blacksmith-8vcpu-ubuntu-2404-arm-4ih5vvpyy44wiouz",
+      "excerpt": "2026-10-28-h3-force-ordinary-control-log.txt"
+    },
+    "baseline": {
+      "completed": 85,
+      "relaxedDrcPassed": 85,
+      "drcIssues": 0,
+      "timeouts": 0,
+      "p50Seconds": 1.7,
+      "p95Seconds": 6,
+      "p50RssMiB": 355.5,
+      "p80RssMiB": 462,
+      "p90RssMiB": 531.6,
+      "averageVias": 37.61,
+      "averageAngledTraces": 9.38
+    },
+    "candidate": {
+      "completed": 85,
+      "relaxedDrcPassed": 85,
+      "drcIssues": 0,
+      "timeouts": 0,
+      "p50Seconds": 1.6,
+      "p95Seconds": 5.9,
+      "p50RssMiB": 357.7,
+      "p80RssMiB": 469.1,
+      "p90RssMiB": 535.4,
+      "averageVias": 37.61,
+      "averageAngledTraces": 9.38
+    },
+    "workflowReportedChangesPercent": {
+      "p50Time": -6.6,
+      "p95Time": -2.1,
+      "p50Rss": 0.6,
+      "p80Rss": 1.5,
+      "p90Rss": 0.7
+    }
+  },
+  "semanticControl": {
+    "region": "cmn_9",
+    "routes": 23,
+    "points": 2459,
+    "projectionSegments": 2377,
+    "forceSteps": 20,
+    "unmodifiedBaselineOutputBytes": 110746,
+    "candidateOutputBytes": 110746,
+    "outputSha256": "201156bd7ea690f5719ddfd845020d8d92e036f4bbc50c1ed0ac969054a781cb",
+    "orderedCollisionPairs": 45,
+    "originalExactWitnessCallsPerClearanceScan": 1333470,
+    "precheckExactWitnessCallsPerClearanceScan": 4426
+  },
+  "validation": {
+    "callerTests": 12,
+    "callerAssertions": 5764,
+    "upstreamTests": 20,
+    "upstreamAssertions": 4137,
+    "callerBunCiRun": 40775760347,
+    "callerBunCiShardsPassed": 9,
+    "typecheck": "pass",
+    "workerEsmDeclarationBuild": "pass",
+    "freshArchiveMatchesSource": true
+  },
+  "caveats": [
+    "One ordered baseline-then-candidate run per dataset; no repeated-run variance estimate.",
+    "Per-sample time/RSS retain printed log precision (0.1 seconds / 0.1 MiB). Stage totals retain the workflow comment's 0.001-second precision.",
+    "Reported percentage deltas come from the workflow's underlying full-precision values and must not be recomputed from rounded display values.",
+    "Raw JSON reports remain in workflow artifacts; this evidence is transcribed from completed job logs and result comments.",
+    "Only H3 is rerun from SRJ36 here. The earlier five-board table describes the separate original memory-fix comparison.",
+    "DDR timing is not validated."
+  ]
+}
