@@ -1,0 +1,17 @@
+Dataset contents retain their source notices and licensing status.
+
+samples/sample002.json and samples/sample003.json are routing abstractions of
+OLIMEX Ltd. OLINUXINO designs licensed CC-BY-SA-3.0-US.
+https://creativecommons.org/licenses/by-sa/3.0/us/
+
+samples/sample004.json is a routing abstraction of Gregory Davill's OrangeCrab
+hardware, licensed CERN-OHL-1.2. The unmodified upstream license and notice are
+included in licenses/.
+
+The pinned H3 and A13 source repositories contain no explicit license file.
+Their status is recorded as NOASSERTION in the corresponding provenance files;
+this repository does not assign them a different license.
+
+Source URLs, source revisions, hashes, attribution, and extraction changes are
+recorded in provenance/. The same source terms apply to derived preview images
+and reduced reproduction data. No blanket license is asserted over the bundle.

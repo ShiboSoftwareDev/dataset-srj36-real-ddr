@@ -1,0 +1,37 @@
+[
+  {
+    "id": "h3",
+    "name": "Allwinner H3 DDR3 16x1",
+    "repo": "hvwyl/allwinner-h3-ddr3-16x1-kicad",
+    "commit": "02e365b21363a17710e0f96072c0844940495567",
+    "path": "project/allwinner-h3.kicad_pcb"
+  },
+  {
+    "id": "a64",
+    "name": "OLIMEX A64-OLinuXino rev H",
+    "repo": "OLIMEX/OLINUXINO",
+    "commit": "85eee9c17ee13af65617d73bdd94de7ec49cfb42",
+    "path": "HARDWARE/A64-OLinuXino/1. Latest hardware revision/A64-OLinuXino hardware revision H/A64-OlinuXino_Rev_H.kicad_pcb"
+  },
+  {
+    "id": "stmp157",
+    "name": "OLIMEX STMP157-OLinuXino-LIME2 rev B1",
+    "repo": "OLIMEX/OLINUXINO",
+    "commit": "85eee9c17ee13af65617d73bdd94de7ec49cfb42",
+    "path": "HARDWARE/STMP157-OLinuXino-LIME2/1. Latest hardware revision/STMP157-OLinuXino-LIME2_Rev_B1/STMP157-OLinuXino-LIME2_Rev_B1.kicad_pcb"
+  },
+  {
+    "id": "orangecrab",
+    "name": "OrangeCrab rev 0.2.1 ECP5 DDR3",
+    "repo": "orangecrab-fpga/orangecrab-hardware",
+    "commit": "c511d569fe2af39467041f888bc231020f40c6ac",
+    "path": "hardware/orangecrab_r0.2.1/OrangeCrab.kicad_pcb"
+  },
+  {
+    "id": "a13",
+    "name": "Allwinner A13 SBC",
+    "repo": "vd-rd/sbc_allwinner_a13",
+    "commit": "8973c32c64349515da64e268cc03ea8c0789ca2a",
+    "path": "hardware/module.kicad_pcb"
+  }
+]

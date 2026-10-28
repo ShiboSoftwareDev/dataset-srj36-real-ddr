@@ -1,0 +1,3 @@
+# Preserve upstream notice text and generated graphics verbatim.
+licenses/** -whitespace
+previews/*.svg -whitespace

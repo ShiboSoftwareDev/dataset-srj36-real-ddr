@@ -1,0 +1,99 @@
+{
+  "datasetName": "dataset-srj36-real-ddr",
+  "sampleCount": 5,
+  "purpose": "Captured real DDR routing memory workloads with original placement, board obstacles and multi-terminal signal nets",
+  "samples": [
+    {
+      "id": "sample001",
+      "boardId": "h3",
+      "title": "Allwinner H3 DDR3 16x1",
+      "file": "samples/sample001.json",
+      "provenance": "provenance/sample001.json",
+      "sha256": "b4c5d5151c0bc0fb3032f230af12c6428e7148318b39f22d3d14c8803f4c7c1e",
+      "sourceUrl": "https://github.com/hvwyl/allwinner-h3-ddr3-16x1-kicad/blob/02e365b21363a17710e0f96072c0844940495567/project/allwinner-h3.kicad_pcb",
+      "license": "NOASSERTION",
+      "layerCount": 2,
+      "connectionCount": 53,
+      "terminalCount": 108,
+      "obstacleCount": 479,
+      "chipReferences": [
+        "DU1",
+        "U1"
+      ]
+    },
+    {
+      "id": "sample002",
+      "boardId": "a64",
+      "title": "OLIMEX A64-OLinuXino rev H",
+      "file": "samples/sample002.json",
+      "provenance": "provenance/sample002.json",
+      "sha256": "9d3e7417f6b1b1711ffc642c02fda5333cb33861d08bb1cc91228846bb751848",
+      "sourceUrl": "https://github.com/OLIMEX/OLINUXINO/blob/85eee9c17ee13af65617d73bdd94de7ec49cfb42/HARDWARE/A64-OLinuXino/1.%20Latest%20hardware%20revision/A64-OLinuXino%20hardware%20revision%20H/A64-OlinuXino_Rev_H.kicad_pcb",
+      "license": "CC-BY-SA-3.0-US",
+      "layerCount": 6,
+      "connectionCount": 75,
+      "terminalCount": 184,
+      "obstacleCount": 2122,
+      "chipReferences": [
+        "U2",
+        "U3",
+        "U1"
+      ]
+    },
+    {
+      "id": "sample003",
+      "boardId": "stmp157",
+      "title": "OLIMEX STMP157-OLinuXino-LIME2 rev B1",
+      "file": "samples/sample003.json",
+      "provenance": "provenance/sample003.json",
+      "sha256": "7dd76a19656988ddd566ba768d71bbbef7a4f94558263b6bae85f86f9cd4f90b",
+      "sourceUrl": "https://github.com/OLIMEX/OLINUXINO/blob/85eee9c17ee13af65617d73bdd94de7ec49cfb42/HARDWARE/STMP157-OLinuXino-LIME2/1.%20Latest%20hardware%20revision/STMP157-OLinuXino-LIME2_Rev_B1/STMP157-OLinuXino-LIME2_Rev_B1.kicad_pcb",
+      "license": "CC-BY-SA-3.0-US",
+      "layerCount": 8,
+      "connectionCount": 72,
+      "terminalCount": 201,
+      "obstacleCount": 2080,
+      "chipReferences": [
+        "U2",
+        "U1",
+        "U3"
+      ]
+    },
+    {
+      "id": "sample004",
+      "boardId": "orangecrab",
+      "title": "OrangeCrab rev 0.2.1 ECP5 DDR3",
+      "file": "samples/sample004.json",
+      "provenance": "provenance/sample004.json",
+      "sha256": "241de7e5d57fe6ebbbf8eadfc21fe4c07c6e0b408b5d024576d7b0439e16fb47",
+      "sourceUrl": "https://github.com/orangecrab-fpga/orangecrab-hardware/blob/c511d569fe2af39467041f888bc231020f40c6ac/hardware/orangecrab_r0.2.1/OrangeCrab.kicad_pcb",
+      "license": "CERN-OHL-1.2",
+      "layerCount": 6,
+      "connectionCount": 50,
+      "terminalCount": 102,
+      "obstacleCount": 893,
+      "chipReferences": [
+        "U3",
+        "U4"
+      ]
+    },
+    {
+      "id": "sample005",
+      "boardId": "a13",
+      "title": "Allwinner A13 SBC",
+      "file": "samples/sample005.json",
+      "provenance": "provenance/sample005.json",
+      "sha256": "8fb3b3ebaf245cbe020b80faebbb3425af665bd27f0e199086ed97e7e082a0a5",
+      "sourceUrl": "https://github.com/vd-rd/sbc_allwinner_a13/blob/8973c32c64349515da64e268cc03ea8c0789ca2a/hardware/module.kicad_pcb",
+      "license": "NOASSERTION",
+      "layerCount": 4,
+      "connectionCount": 96,
+      "terminalCount": 192,
+      "obstacleCount": 895,
+      "chipReferences": [
+        "U200",
+        "U100"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "name": "@tscircuit/dataset-srj36-real-ddr",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Five captured real DDR board routing workloads and the A64/H3 memory regressions",
+  "type": "module",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "exports": {
+    ".": { "types": "./index.d.ts", "default": "./index.js" },
+    "./manifest.json": "./manifest.json",
+    "./samples/*": "./samples/*",
+    "./provenance/*": "./provenance/*",
+    "./repro/*": "./repro/*"
+  },
+  "files": ["index.js", "index.d.ts", "manifest.json", "samples", "provenance", "repro", "previews", "licenses", "README.md", "LICENSE"],
+  "repository": { "type": "git", "url": "https://github.com/ShiboSoftwareDev/dataset-srj36-real-ddr.git" },
+  "scripts": {
+    "test": "node scripts/validate.mjs",
+    "validate": "node scripts/validate.mjs",
+    "snapshots": "bun scripts/render-samples.mjs",
+    "generate": "python3 scripts/fetch-sources.py && python3 scripts/extract-kicad.py && node scripts/validate.mjs"
+  },
+  "devDependencies": {
+    "@resvg/resvg-js": "2.6.2",
+    "@tscircuit/capacity-autorouter": "0.0.783",
+    "graphics-debug": "0.0.99"
+  }
+}
