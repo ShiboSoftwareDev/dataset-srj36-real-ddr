@@ -1,0 +1,41 @@
+2026-10-28T20:22:06.4118197Z Benchmark base: ["--pipeline","9","--dataset","36","--concurrency","1","--effort","1","--sample-timeout","360s","--max-rss-mib","12288"]
+2026-10-28T20:22:06.8466094Z [benchmark] runtime {"bunVersion":"1.4.2","platform":"linux","architecture":"arm64","cpuModel":"unknown","logicalCpuCount":8,"availableParallelism":8,"memoryLimitBytes":25152876544,"memoryBudgetPerWorkerBytes":6442450944,"requestedConcurrency":1,"workerCount":1,"threadsPerSample":1,"effectiveThreadsPerSample":1,"cpuBudgetPerSample":1}
+2026-10-28T20:28:06.8591757Z [AutoroutingPipelineSolver9_PreloadedTraceGraph] 0.0% success (0/1) timed out sample001 360.0s peakRss=7185.1 MiB (Timed out after 360.0s
+2026-10-28T20:28:06.8592967Z Last progress: phase=highDensityRouteSolver, solver=Pipeline9HighDensitySolver, pipelineIterations=6574259, phaseIterations=2567339, pipelineProgress=55%, phaseProgress=64%)
+2026-10-28T20:34:07.2429893Z [AutoroutingPipelineSolver9_PreloadedTraceGraph] 0.0% success (0/2) timed out sample002 360.0s peakRss=10481.4 MiB (Timed out after 360.0s
+2026-10-28T20:34:07.2431127Z Last progress: phase=highDensityRouteSolver, solver=Pipeline9HighDensitySolver, pipelineIterations=3395954, phaseIterations=1252141, pipelineProgress=54%, phaseProgress=42%)
+2026-10-28T20:40:07.7824672Z [AutoroutingPipelineSolver9_PreloadedTraceGraph] 0.0% success (0/3) timed out sample003 360.0s peakRss=7860.0 MiB (Timed out after 360.0s
+2026-10-28T20:40:07.7825892Z Last progress: phase=highDensityRouteSolver, solver=Pipeline9HighDensitySolver, pipelineIterations=2933439, phaseIterations=749296, pipelineProgress=53%, phaseProgress=34%)
+2026-10-28T20:40:40.6957388Z [benchmark] sample004 high-density complete: 32.5s, peakRss=1413.3 MiB
+2026-10-28T20:42:17.9860897Z [AutoroutingPipelineSolver9_PreloadedTraceGraph] 25.0% success (1/4) solved sample004 129.5s peakRss=2246.1 MiB
+2026-10-28T20:44:24.8302792Z [benchmark] sample005 high-density complete: 126.4s, peakRss=3375.8 MiB
+2026-10-28T20:47:10.9254622Z [AutoroutingPipelineSolver9_PreloadedTraceGraph] 40.0% success (2/5) solved sample005 292.0s peakRss=4655.8 MiB
+2026-10-28T20:47:11.1869940Z 1. timeout at last observed phase: highDensityRouteSolver / Pipeline9HighDensitySolver - 3 samples, 3 occurrences (samples: 1, 2, 3)
+2026-10-28T20:47:11.1871182Z 1. timeout at last observed phase: highDensityRouteSolver / Pipeline9HighDensitySolver - 3 samples, 3 occurrences (samples: 1, 2, 3)
+2026-10-28T20:47:11.1872047Z 2. relaxed DRC: pcb_pad_trace_clearance_error - 2 samples, 72 occurrences (samples: 4, 5)
+2026-10-28T20:47:11.1872637Z 3. relaxed DRC: pcb_trace_error - 2 samples, 35 occurrences (samples: 4, 5)
+2026-10-28T20:47:11.1873234Z 4. relaxed DRC: pcb_via_trace_clearance_error - 2 samples, 33 occurrences (samples: 4, 5)
+2026-10-28T20:47:11.1873881Z 5. relaxed DRC: trace_smtpad_accidental_contact - 2 samples, 7 occurrences (samples: 4, 5)
+2026-10-28T20:47:11.1874475Z 6. relaxed DRC: trace_via_overlap - 1 sample, 10 occurrences (samples: 5)
+2026-10-28T20:47:11.2055343Z Benchmark pr: ["--pipeline","9","--dataset","36","--concurrency","1","--effort","1","--sample-timeout","360s","--max-rss-mib","12288"]
+2026-10-28T20:47:11.6386640Z [benchmark] runtime {"bunVersion":"1.4.2","platform":"linux","architecture":"arm64","cpuModel":"unknown","logicalCpuCount":8,"availableParallelism":8,"memoryLimitBytes":25152876544,"memoryBudgetPerWorkerBytes":6442450944,"requestedConcurrency":1,"workerCount":1,"threadsPerSample":1,"effectiveThreadsPerSample":1,"cpuBudgetPerSample":1}
+2026-10-28T20:49:35.4573934Z [benchmark] sample001 high-density complete: 143.4s, peakRss=1700.2 MiB
+2026-10-28T20:53:11.6523920Z [AutoroutingPipelineSolver9_PreloadedTraceGraph] 0.0% success (0/1) timed out sample001 360.0s peakRss=1700.9 MiB (Timed out after 360.0s
+2026-10-28T20:53:11.6525227Z Last progress: phase=highDensityForceImproveSolver, solver=Pipeline9HighDensityForceImproveSolver, pipelineIterations=4888920, phaseIterations=457, pipelineProgress=56%, phaseProgress=0%)
+2026-10-28T20:59:11.7636467Z [AutoroutingPipelineSolver9_PreloadedTraceGraph] 0.0% success (0/2) timed out sample002 360.0s peakRss=9170.3 MiB (Timed out after 360.0s
+2026-10-28T20:59:11.7637707Z Last progress: phase=highDensityRouteSolver, solver=Pipeline9HighDensitySolver, pipelineIterations=3080824, phaseIterations=937011, pipelineProgress=54%, phaseProgress=42%)
+2026-10-28T21:05:12.2410101Z [AutoroutingPipelineSolver9_PreloadedTraceGraph] 0.0% success (0/3) timed out sample003 360.0s peakRss=8190.0 MiB (Timed out after 360.0s
+2026-10-28T21:05:12.2411324Z Last progress: phase=highDensityRouteSolver, solver=Pipeline9HighDensitySolver, pipelineIterations=2855246, phaseIterations=671103, pipelineProgress=54%, phaseProgress=44%)
+2026-10-28T21:05:45.2729342Z [benchmark] sample004 high-density complete: 32.6s, peakRss=1409.0 MiB
+2026-10-28T21:07:14.6686039Z [AutoroutingPipelineSolver9_PreloadedTraceGraph] 25.0% success (1/4) solved sample004 121.7s peakRss=2175.7 MiB
+2026-10-28T21:09:31.9650011Z [benchmark] sample005 high-density complete: 136.8s, peakRss=3104.5 MiB
+2026-10-28T21:12:30.6240938Z [AutoroutingPipelineSolver9_PreloadedTraceGraph] 40.0% success (2/5) solved sample005 314.9s peakRss=4420.4 MiB
+2026-10-28T21:12:30.9009890Z 1. timeout at last observed phase: highDensityRouteSolver / Pipeline9HighDensitySolver - 2 samples, 2 occurrences (samples: 2, 3)
+2026-10-28T21:12:30.9010989Z 2. timeout at last observed phase: highDensityForceImproveSolver / Pipeline9HighDensityForceImproveSolver - 1 sample, 1 occurrence (samples: 1)
+2026-10-28T21:12:30.9012131Z 1. relaxed DRC: pcb_pad_trace_clearance_error - 2 samples, 72 occurrences (samples: 4, 5)
+2026-10-28T21:12:30.9012716Z 2. relaxed DRC: pcb_trace_error - 2 samples, 35 occurrences (samples: 4, 5)
+2026-10-28T21:12:30.9013309Z 3. relaxed DRC: pcb_via_trace_clearance_error - 2 samples, 33 occurrences (samples: 4, 5)
+2026-10-28T21:12:30.9013945Z 4. relaxed DRC: trace_smtpad_accidental_contact - 2 samples, 7 occurrences (samples: 4, 5)
+2026-10-28T21:12:30.9014771Z 5. timeout at last observed phase: highDensityRouteSolver / Pipeline9HighDensitySolver - 2 samples, 2 occurrences (samples: 2, 3)
+2026-10-28T21:12:30.9015544Z 6. relaxed DRC: trace_via_overlap - 1 sample, 10 occurrences (samples: 5)
+2026-10-28T21:12:30.9016377Z 7. timeout at last observed phase: highDensityForceImproveSolver / Pipeline9HighDensityForceImproveSolver - 1 sample, 1 occurrence (samples: 1)

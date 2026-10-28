@@ -31,3 +31,17 @@ harness from #3331/#3332. Its `highDensityStage` resource checkpoint records
 completion of that stage separately from full-board routing and DRC. Parent-side
 Linux RSS sampling remains active if the routing child blocks or reaches a
 resource limit.
+
+The [recorded five-board comparison](../README.md#measured-baseline-and-fix) uses
+baseline `df79cbbb` and fix `dce08687` on one Blacksmith runner. H3 completes
+high-density routing only with the fix (143.4 seconds, 1,700.2 MiB through the
+stage), but both full-board runs time out. A64 and STM32MP157 time out in
+high-density routing on both revisions. OrangeCrab and A13 finish routing on
+both, with relaxed DRC failures. Stage completion therefore rises from 2/5 to
+3/5 while full-board completion stays 2/5 and DRC passes stay 0/5. The full-run
+H3 peaks of 7,185.1 / 1,700.9 MiB are measurements through different timeout
+phases, not two successfully completed boards.
+
+The [measurement JSON](../benchmarks/2026-10-28-srj36.json) includes immutable
+input hashes, runtime, limits, per-board outcomes and stage checkpoints;
+[log excerpts](../benchmarks/2026-10-28-srj36-log.txt) preserve the printed evidence.

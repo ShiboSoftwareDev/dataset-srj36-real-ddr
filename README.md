@@ -50,7 +50,7 @@ to boards known to finish routing.
 
 Compare the same inputs and routing rules on baseline and fixed revisions, one
 board at a time. Record per-board peak RSS, time, stage reached, completion and
-DRC. Run the high-density stage comparison separately from complete-board routing.
+DRC. Record high-density stage measurements separately from complete-board routing.
 Passing high-density routing does not establish complete-board DRC or DDR timing.
 The historical A64 stage comparison was still 8.59 GiB after the fix.
 
@@ -64,6 +64,46 @@ solved. Both sides of a comparison must use this same measurement code.
 Older single-thread benchmark revisions can report stale startup RSS after a
 timeout because their progress timer is blocked by synchronous routing. Those
 timeout values must not be used to measure the DDR improvement.
+
+## Measured baseline and fix
+
+[Same-machine Blacksmith run](https://github.com/tscircuit/tscircuit-autorouter/actions/runs/40762425047),
+2026-10-28: baseline `df79cbbb579b5a4c87977e6020dd93335df1a7f8` followed by the
+stacked fix `dce0868770955001c30815c8ab1d49284f5f37fa`, both using dataset commit
+`f5e1d6886ee74f136a627e0e4f92aafbf3375154`. Pipeline 9, Bun 1.4.2, Linux ARM64,
+8 vCPUs, one routing thread and one sample at a time, effort 1, 360 seconds and
+12 GiB maximum RSS per sample. The two revisions use identical measurement code;
+the baseline's production solver source matches main at `637b6c58`.
+
+| Sample | Baseline peak MiB | Fixed peak MiB | Observed change | Full-run seconds, baseline → fixed | Outcome on both |
+| --- | ---: | ---: | ---: | ---: | --- |
+| H3 (001) | 7,185.1 | 1,700.9 | -76.3% | 360.0 → 360.0 | Timeout |
+| A64 (002) | 10,481.4 | 9,170.3 | -12.5% | 360.0 → 360.0 | Timeout |
+| STM32MP157 (003) | 7,860.0 | 8,190.0 | +4.2% | 360.0 → 360.0 | Timeout |
+| OrangeCrab (004) | 2,246.1 | 2,175.7 | -3.1% | 129.5 → 121.7 | Completed; DRC failed |
+| A13 (005) | 4,655.8 | 4,420.4 | -5.1% | 292.0 → 314.9 | Completed; DRC failed |
+
+H3 provides the clearest evidence: the baseline times out in high-density routing
+at 64% observed stage progress, while the fix completes that stage in 143.4 seconds
+with a cumulative peak of 1,700.2 MiB. The fixed full board still times out in
+`highDensityForceImproveSolver`. A64 remains memory-heavy and both revisions time
+out in high-density routing at 42% observed progress. STM32MP157 also times out
+there, at 34% baseline / 44% fixed progress.
+
+High-density stage completion rises from 2/5 to 3/5, but full-board completion
+remains 2/5 and relaxed DRC passes remain 0/5. Both revisions report the same 157
+DRC issues across OrangeCrab and A13. No sample hits the RSS cap. Observed median
+peak RSS falls 38.5%, from 7,185.1 to 4,420.4 MiB; the timed-out workloads have not
+completed equal work, so this is not a completed-board memory saving estimate.
+This is one ordered run, without repeated-run variance estimates. DDR timing is
+not validated. A13 takes 7.8% longer despite its lower peak RSS.
+
+[Recorded measurements and input hashes](benchmarks/2026-10-28-srj36.json),
+[job-log evidence](benchmarks/2026-10-28-srj36-log.txt), and the
+[benchmark summary and raw-report artifact](https://github.com/tscircuit/tscircuit-autorouter/pull/3332#issuecomment-6479730727)
+retain the comparison. Per-board values here are transcribed from job logs at
+their printed precision (0.1 seconds / 0.1 MiB); full-precision JSON reports are
+in the workflow artifact.
 
 The exact local checkpoints and commands are documented in [repro/README.md](repro/README.md).
 
