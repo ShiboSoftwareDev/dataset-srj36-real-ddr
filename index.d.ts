@@ -2,6 +2,9 @@
 export interface SimpleRouteJson {
   layerCount: number
   minTraceWidth: number
+  minViaPadDiameter: number
+  minViaHoleDiameter: number
+  defaultObstacleMargin: number
   bounds: { minX: number; minY: number; maxX: number; maxY: number }
   obstacles: Array<Record<string, unknown>>
   connections: Array<{
