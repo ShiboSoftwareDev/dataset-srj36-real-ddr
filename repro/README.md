@@ -25,3 +25,9 @@ The allocation test is expected-failing on [#3331](https://github.com/tscircuit/
 and an ordinary passing test on [#3332](https://github.com/tscircuit/tscircuit-autorouter/pull/3332).
 The guarded CLI stops at its RSS/time limits and exits 2; a resource stop is
 never counted as solved. Use identical Bun versions and limits on both revisions.
+
+For full SRJ board comparisons, use the pinned samples and identical benchmark
+harness from #3331/#3332. Its `highDensityStage` resource checkpoint records
+completion of that stage separately from full-board routing and DRC. Parent-side
+Linux RSS sampling remains active if the routing child blocks or reaches a
+resource limit.

@@ -44,8 +44,8 @@ to boards known to finish routing.
 
 ```sh
 # In the autorouter checkout after SRJ36 integration:
-./benchmark.sh --pipeline 9 --dataset 36 --sample-numbers 1,2 \
-  --concurrency 1 --sample-timeout 1200s
+./benchmark.sh --pipeline 9 --dataset 36 --concurrency 1 --effort 1 \
+  --sample-timeout 360s --max-rss-mib 12288
 ```
 
 Compare the same inputs and routing rules on baseline and fixed revisions, one
@@ -54,10 +54,16 @@ DRC. Run the high-density stage comparison separately from complete-board routin
 Passing high-density routing does not establish complete-board DRC or DDR timing.
 The historical A64 stage comparison was still 8.59 GiB after the fix.
 
-The current single-thread benchmark loses progress-timer updates while its
-synchronous solve runs. For killed/timed-out samples its last reported RSS may
-be stale. Use an external process memory monitor for capped comparisons; do not
-interpret startup RSS as peak RSS or a timeout as a successful solve.
+The measurement-enabled branches in #3331/#3332 poll Linux process peak RSS from
+the benchmark parent, so a busy routing loop cannot block memory accounting.
+Their raw results retain elapsed time and cumulative RSS through the first
+observed high-density completion in `highDensityStage`. The optional
+`--max-rss-mib` limit fails over-budget samples and never counts a limit stop as
+solved. Both sides of a comparison must use this same measurement code.
+
+Older single-thread benchmark revisions can report stale startup RSS after a
+timeout because their progress timer is blocked by synchronous routing. Those
+timeout values must not be used to measure the DDR improvement.
 
 The exact local checkpoints and commands are documented in [repro/README.md](repro/README.md).
 
