@@ -1,0 +1,20 @@
+2026-10-28T21:57:36.5998897Z + high-density-repair01@github:tscircuit/high-density-repair01#27b3392
+2026-10-28T21:57:40.3649772Z + high-density-repair01@github:tscircuit/high-density-repair01#58d1b02
+2026-10-28T21:57:40.4014563Z Benchmark base: ["--pipeline","9","--dataset","1","--concurrency","1","--effort","1","--sample-timeout","360s","--max-rss-mib","12288"]
+2026-10-28T21:57:40.8931119Z Running 85 benchmark tasks across 1 sample workers, 1 routing threads per sample (1 solver run, 85 scenarios, dataset: dataset01, isolated per-sample memory measurement)
+2026-10-28T21:57:40.8933752Z [benchmark] runtime {"bunVersion":"1.4.2","platform":"linux","architecture":"arm64","cpuModel":"unknown","logicalCpuCount":8,"availableParallelism":8,"memoryLimitBytes":25152876544,"memoryBudgetPerWorkerBytes":6442450944,"requestedConcurrency":1,"workerCount":1,"threadsPerSample":1,"effectiveThreadsPerSample":1,"cpuBudgetPerSample":1}
+2026-10-28T22:01:35.2180398Z | AutoroutingPipelineSolver9_PreloadedTraceGraph | 100.0%      | 100.0%             | 0/85      | 1.7s     | 2.1s     | 2.8s     | 3.4s     | 5.5s     | 6.0s     | 355.5 MiB  | 462.0 MiB  | 531.6 MiB  | 37.61   |
+2026-10-28T22:01:35.2183230Z | Style errors | AutoroutingPipelineSolver9_PreloadedTraceGraph |
+2026-10-28T22:01:35.2185824Z No failures recorded.
+2026-10-28T22:01:35.2186535Z No failures recorded.
+2026-10-28T22:01:35.2186907Z Top failure buckets:
+2026-10-28T22:01:35.2187267Z No failures recorded.
+2026-10-28T22:01:35.2316139Z Benchmark pr: ["--pipeline","9","--dataset","1","--concurrency","1","--effort","1","--sample-timeout","360s","--max-rss-mib","12288"]
+2026-10-28T22:01:35.6960843Z Running 85 benchmark tasks across 1 sample workers, 1 routing threads per sample (1 solver run, 85 scenarios, dataset: dataset01, isolated per-sample memory measurement)
+2026-10-28T22:01:35.6963539Z [benchmark] runtime {"bunVersion":"1.4.2","platform":"linux","architecture":"arm64","cpuModel":"unknown","logicalCpuCount":8,"availableParallelism":8,"memoryLimitBytes":25152876544,"memoryBudgetPerWorkerBytes":6442450944,"requestedConcurrency":1,"workerCount":1,"threadsPerSample":1,"effectiveThreadsPerSample":1,"cpuBudgetPerSample":1}
+2026-10-28T22:05:24.0910302Z | AutoroutingPipelineSolver9_PreloadedTraceGraph | 100.0%      | 100.0%             | 0/85      | 1.6s     | 2.1s     | 2.8s     | 3.4s     | 5.1s     | 5.9s     | 357.7 MiB  | 469.1 MiB  | 535.4 MiB  | 37.61   |
+2026-10-28T22:05:24.0913155Z | Style errors | AutoroutingPipelineSolver9_PreloadedTraceGraph |
+2026-10-28T22:05:24.0915484Z No failures recorded.
+2026-10-28T22:05:24.0916198Z No failures recorded.
+2026-10-28T22:05:24.0916561Z Top failure buckets:
+2026-10-28T22:05:24.0916915Z No failures recorded.

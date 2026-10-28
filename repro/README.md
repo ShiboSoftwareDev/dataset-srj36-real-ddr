@@ -25,3 +25,33 @@ The allocation test is expected-failing on [#3331](https://github.com/tscircuit/
 and an ordinary passing test on [#3332](https://github.com/tscircuit/tscircuit-autorouter/pull/3332).
 The guarded CLI stops at its RSS/time limits and exits 2; a resource stop is
 never counted as solved. Use identical Bun versions and limits on both revisions.
+
+For full SRJ board comparisons, use the pinned samples and identical benchmark
+harness from #3331/#3332. Its `highDensityStage` resource checkpoint records
+completion of that stage separately from full-board routing and DRC. Parent-side
+Linux RSS sampling remains active if the routing child blocks or reaches a
+resource limit.
+
+The [recorded five-board comparison](../README.md#measured-baseline-and-fix) uses
+baseline `df79cbbb` and fix `dce08687` on one Blacksmith runner. H3 completes
+high-density routing only with the fix (143.4 seconds, 1,700.2 MiB through the
+stage), but both full-board runs time out. A64 and STM32MP157 time out in
+high-density routing on both revisions. OrangeCrab and A13 finish routing on
+both, with relaxed DRC failures. Stage completion therefore rises from 2/5 to
+3/5 while full-board completion stays 2/5 and DRC passes stay 0/5. The full-run
+H3 peaks of 7,185.1 / 1,700.9 MiB are measurements through different timeout
+phases, not two successfully completed boards.
+
+The [measurement JSON](../benchmarks/2026-10-28-srj36.json) includes immutable
+input hashes, runtime, limits, per-board outcomes and stage checkpoints;
+[log excerpts](../benchmarks/2026-10-28-srj36-log.txt) preserve the printed evidence.
+
+The [H3 force-improvement follow-up](../README.md#h3-force-improvement-follow-up)
+captures region `cmn_9` with 23 routes and 2,459 points. Its regression fixtures
+are in autorouter #3341 and repair01 #41; the indexed solver preserves the
+original 110,746-byte route output after all 20 force steps. The full-board paired
+run completes force improvement in 168.4 seconds with the new pin, while the
+parent is unfinished after 223.0 seconds in that stage. Both boards still time
+out at 360 seconds, with the candidate now in high-density repair. DRC is not
+reached. [The evidence JSON](../benchmarks/2026-10-28-h3-force-clearance.json)
+records immutable revisions, phase timings, peaks and the 85-board control.

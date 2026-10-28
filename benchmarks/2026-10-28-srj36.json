@@ -1,0 +1,281 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-28",
+  "dataset": "srj36",
+  "datasetCommit": "f5e1d6886ee74f136a627e0e4f92aafbf3375154",
+  "baseline": "df79cbbb579b5a4c87977e6020dd93335df1a7f8",
+  "fix": "dce0868770955001c30815c8ab1d49284f5f37fa",
+  "location": "Blacksmith, same machine, baseline then fix",
+  "concurrency": 1,
+  "effort": 1,
+  "sampleTimeoutSeconds": 360,
+  "sampleMaxRssMiB": 12288,
+  "samples": [
+    "H3",
+    "A64",
+    "STM32MP157",
+    "OrangeCrab",
+    "A13"
+  ],
+  "measurement": "Linux process VmHWM polled from parent; inline progress; cumulative RSS and elapsed-time checkpoint at high-density completion; full-board outcomes reported separately",
+  "workflowRunId": 40762425047,
+  "commandCommentId": 6479710735,
+  "resultCommentId": 6479730727,
+  "source": {
+    "workflowUrl": "https://github.com/tscircuit/tscircuit-autorouter/actions/runs/40762425047",
+    "jobId": 123077592060,
+    "jobConclusion": "success",
+    "resultCommentUrl": "https://github.com/tscircuit/tscircuit-autorouter/pull/3332#issuecomment-6479730727",
+    "artifactId": 12852636529,
+    "artifactName": "same-machine-benchmark-36",
+    "artifactDigest": "sha256:e1030c54854e89c54bb2777724b9042967ce329818310ee58120a1574283050e",
+    "runnerName": "blacksmith-8vcpu-ubuntu-2404-arm-5zepvz6xfeiqcwok",
+    "transcription": "Per-board values parsed from completed job logs; seconds and MiB rounded to 0.1 as printed. Original full-precision JSON reports remain in the workflow artifact.",
+    "excerpt": "2026-10-28-srj36-log.txt",
+    "drcAttribution": "Both completed samples are identified in DRC failure buckets and the aggregate relaxed DRC pass rate is 0%; timed-out samples have null (not evaluated). Per-board DRC issue counts are not printed and are omitted."
+  },
+  "runtime": {
+    "baseline": {
+      "bunVersion": "1.4.2",
+      "platform": "linux",
+      "architecture": "arm64",
+      "cpuModel": "unknown",
+      "logicalCpuCount": 8,
+      "availableParallelism": 8,
+      "memoryLimitBytes": 25152876544,
+      "memoryBudgetPerWorkerBytes": 6442450944,
+      "requestedConcurrency": 1,
+      "workerCount": 1,
+      "threadsPerSample": 1,
+      "effectiveThreadsPerSample": 1,
+      "cpuBudgetPerSample": 1
+    },
+    "fixed": {
+      "bunVersion": "1.4.2",
+      "platform": "linux",
+      "architecture": "arm64",
+      "cpuModel": "unknown",
+      "logicalCpuCount": 8,
+      "availableParallelism": 8,
+      "memoryLimitBytes": 25152876544,
+      "memoryBudgetPerWorkerBytes": 6442450944,
+      "requestedConcurrency": 1,
+      "workerCount": 1,
+      "threadsPerSample": 1,
+      "effectiveThreadsPerSample": 1,
+      "cpuBudgetPerSample": 1
+    }
+  },
+  "aggregate": {
+    "baseline": {
+      "completed": 2,
+      "timedOut": 3,
+      "relaxedDrcPassed": 0,
+      "drcIssuesAcrossCompletedSamples": 157,
+      "completedHighDensityStages": 2
+    },
+    "fixed": {
+      "completed": 2,
+      "timedOut": 3,
+      "relaxedDrcPassed": 0,
+      "drcIssuesAcrossCompletedSamples": 157,
+      "completedHighDensityStages": 3
+    },
+    "memoryPercentilesMiB": {
+      "baseline": {
+        "p50": 7185.1,
+        "p80": 8384.3,
+        "p90": 9432.9
+      },
+      "fixed": {
+        "p50": 4420.4,
+        "p80": 8386.1,
+        "p90": 8778.2
+      }
+    },
+    "drcIssuesByTypeOnEachRevision": {
+      "pcb_pad_trace_clearance_error": 72,
+      "pcb_trace_error": 35,
+      "pcb_via_trace_clearance_error": 33,
+      "trace_smtpad_accidental_contact": 7,
+      "trace_via_overlap": 10
+    }
+  },
+  "caveats": [
+    "One ordered baseline-then-fixed run; no repeated-run variance estimate.",
+    "RSS/timeouts measure observed work through each stop, not equal completed workloads.",
+    "No RSS cap hit; H3, A64 and STM32MP157 hit the 360-second timeout on both revisions.",
+    "High-density checkpoint is cumulative process peak and elapsed time through stage completion.",
+    "No complete board passed relaxed DRC, and DDR timing was not validated."
+  ],
+  "rows": [
+    {
+      "sample": "sample001",
+      "board": "Allwinner H3 DDR3 16x1",
+      "inputSha256": "b4c5d5151c0bc0fb3032f230af12c6428e7148318b39f22d3d14c8803f4c7c1e",
+      "baseline": {
+        "didSolve": false,
+        "didTimeout": true,
+        "elapsedSeconds": 360,
+        "peakRssMiB": 7185.1,
+        "relaxedDrcPassed": null,
+        "lastProgress": {
+          "phase": "highDensityRouteSolver",
+          "solver": "Pipeline9HighDensitySolver",
+          "pipelineIterations": 6574259,
+          "phaseIterations": 2567339,
+          "pipelineProgressPercent": 55,
+          "phaseProgressPercent": 64
+        },
+        "highDensity": null
+      },
+      "fixed": {
+        "highDensity": {
+          "elapsedSeconds": 143.4,
+          "peakRssMiB": 1700.2
+        },
+        "didSolve": false,
+        "didTimeout": true,
+        "elapsedSeconds": 360,
+        "peakRssMiB": 1700.9,
+        "relaxedDrcPassed": null,
+        "lastProgress": {
+          "phase": "highDensityForceImproveSolver",
+          "solver": "Pipeline9HighDensityForceImproveSolver",
+          "pipelineIterations": 4888920,
+          "phaseIterations": 457,
+          "pipelineProgressPercent": 56,
+          "phaseProgressPercent": 0
+        }
+      }
+    },
+    {
+      "sample": "sample002",
+      "board": "OLIMEX A64-OLinuXino rev H",
+      "inputSha256": "9d3e7417f6b1b1711ffc642c02fda5333cb33861d08bb1cc91228846bb751848",
+      "baseline": {
+        "didSolve": false,
+        "didTimeout": true,
+        "elapsedSeconds": 360,
+        "peakRssMiB": 10481.4,
+        "relaxedDrcPassed": null,
+        "lastProgress": {
+          "phase": "highDensityRouteSolver",
+          "solver": "Pipeline9HighDensitySolver",
+          "pipelineIterations": 3395954,
+          "phaseIterations": 1252141,
+          "pipelineProgressPercent": 54,
+          "phaseProgressPercent": 42
+        },
+        "highDensity": null
+      },
+      "fixed": {
+        "didSolve": false,
+        "didTimeout": true,
+        "elapsedSeconds": 360,
+        "peakRssMiB": 9170.3,
+        "relaxedDrcPassed": null,
+        "lastProgress": {
+          "phase": "highDensityRouteSolver",
+          "solver": "Pipeline9HighDensitySolver",
+          "pipelineIterations": 3080824,
+          "phaseIterations": 937011,
+          "pipelineProgressPercent": 54,
+          "phaseProgressPercent": 42
+        },
+        "highDensity": null
+      }
+    },
+    {
+      "sample": "sample003",
+      "board": "OLIMEX STMP157-OLinuXino-LIME2 rev B1",
+      "inputSha256": "7dd76a19656988ddd566ba768d71bbbef7a4f94558263b6bae85f86f9cd4f90b",
+      "baseline": {
+        "didSolve": false,
+        "didTimeout": true,
+        "elapsedSeconds": 360,
+        "peakRssMiB": 7860,
+        "relaxedDrcPassed": null,
+        "lastProgress": {
+          "phase": "highDensityRouteSolver",
+          "solver": "Pipeline9HighDensitySolver",
+          "pipelineIterations": 2933439,
+          "phaseIterations": 749296,
+          "pipelineProgressPercent": 53,
+          "phaseProgressPercent": 34
+        },
+        "highDensity": null
+      },
+      "fixed": {
+        "didSolve": false,
+        "didTimeout": true,
+        "elapsedSeconds": 360,
+        "peakRssMiB": 8190,
+        "relaxedDrcPassed": null,
+        "lastProgress": {
+          "phase": "highDensityRouteSolver",
+          "solver": "Pipeline9HighDensitySolver",
+          "pipelineIterations": 2855246,
+          "phaseIterations": 671103,
+          "pipelineProgressPercent": 54,
+          "phaseProgressPercent": 44
+        },
+        "highDensity": null
+      }
+    },
+    {
+      "sample": "sample004",
+      "board": "OrangeCrab rev 0.2.1 ECP5 DDR3",
+      "inputSha256": "241de7e5d57fe6ebbbf8eadfc21fe4c07c6e0b408b5d024576d7b0439e16fb47",
+      "baseline": {
+        "highDensity": {
+          "elapsedSeconds": 32.5,
+          "peakRssMiB": 1413.3
+        },
+        "didSolve": true,
+        "didTimeout": false,
+        "elapsedSeconds": 129.5,
+        "peakRssMiB": 2246.1,
+        "relaxedDrcPassed": false
+      },
+      "fixed": {
+        "highDensity": {
+          "elapsedSeconds": 32.6,
+          "peakRssMiB": 1409
+        },
+        "didSolve": true,
+        "didTimeout": false,
+        "elapsedSeconds": 121.7,
+        "peakRssMiB": 2175.7,
+        "relaxedDrcPassed": false
+      }
+    },
+    {
+      "sample": "sample005",
+      "board": "Allwinner A13 SBC",
+      "inputSha256": "8fb3b3ebaf245cbe020b80faebbb3425af665bd27f0e199086ed97e7e082a0a5",
+      "baseline": {
+        "highDensity": {
+          "elapsedSeconds": 126.4,
+          "peakRssMiB": 3375.8
+        },
+        "didSolve": true,
+        "didTimeout": false,
+        "elapsedSeconds": 292,
+        "peakRssMiB": 4655.8,
+        "relaxedDrcPassed": false
+      },
+      "fixed": {
+        "highDensity": {
+          "elapsedSeconds": 136.8,
+          "peakRssMiB": 3104.5
+        },
+        "didSolve": true,
+        "didTimeout": false,
+        "elapsedSeconds": 314.9,
+        "peakRssMiB": 4420.4,
+        "relaxedDrcPassed": false
+      }
+    }
+  ]
+}
